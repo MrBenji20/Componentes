@@ -1,0 +1,81 @@
+.checkbox input[type="checkbox"]{
+    display: none;
+}
+
+.checkbox > label {
+    text-transform: capitalize;
+    padding: 5px 15px 5px 51px;
+    display: inline-block;
+    position: relative;
+    font-size: 1.5em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all ease .2s;
+}
+
+.checkbox > label:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 5px;
+    z-index: -1;
+    transition: opacity 0.2s ease;
+    opacity: 0;
+}
+
+/* Colores transparente */
+.primary > label:after {background-color: var(--primary-color)}
+.primary_lighten > label:after {background-color: var(--primary-color-lighten);}
+.secondary > label:after {background-color: var(--secondary-color)}
+.secondary_lighten > label:after {background-color: var(--secondary-color-lighten);}
+.tertiary > label:after {background-color: var(--tertiary-color)}
+.tertiary_lighten > label:after {background-color: var(--tertiary-color-lighten);}
+
+.checkbox > label:hover:after {
+    opacity: 0.3;
+}
+
+
+.checkbox > label:before {
+    content: "";
+    width: 17px;
+    height: 17px;
+    display: inline-block;
+    background-color: none;
+    position: absolute;
+    left: 17px;
+    top: 7px;
+}
+
+/* Colores del borde del cuadrado */
+.primary > label:before {border: 2px solid var(--primary-color)}
+.primary_lighten > label:before {border: 2px solid var(--primary-color-lighten);}
+.secondary > label:before {border: 2px solid var(--secondary-color)}
+.secondary_lighten > label:before {border: 2px solid var(--secondary-color-lighten);}
+.tertiary > label:before {border: 2px solid var(--tertiary-color)}
+.tertiary_lighten > label:before {border: 2px solid var(--tertiary-color-lighten);}
+
+.checkbox > input[type="checkbox"]:checked + label{
+    color: #fff;
+}
+
+/* cololres cuando el check este apretado */
+.primary > input[type="checkbox"]:checked + label {color: var(--primary-color)}
+.primary_lighten > input[type="checkbox"]:checked + label {color: var(--primary-color-lighten);}
+.secondary > input[type="checkbox"]:checked + label {color: var(--secondary-color)}
+.secondary_lighten > input[type="checkbox"]:checked + label {color: var(--secondary-color-lighten);}
+.tertiary > input[type="checkbox"]:checked + label {color: var(--tertiary-color)}
+.tertiary_lighten > input[type="checkbox"]:checked + label {color: var(--tertiary-color-lighten);}
+
+.checkbox > input[type="checkbox"]:checked + label:before {
+    content: "✓";
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .8em;
+    font-weight: bold;
+}
